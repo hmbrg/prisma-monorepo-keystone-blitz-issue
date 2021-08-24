@@ -1,0 +1,16 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "singleQuote": false,
+        "quoteProps": "preserve"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "homepage": "https://github.com/prisma-issue/prisma-issue",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prisma-issue/prisma-issue",
+    "directory": "apps/app"
+  },
+  "author": {
+    "name": "Matthias Hamborg",
+    "url": "https://github.com/hmbrg"
+  },
+  "scripts": {
+    "dev": "blitz dev",
+    "build": "blitz build",
+    "start": "blitz start",
+    "studio": "blitz prisma studio",
+    "blitz": "blitz",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "fix:staged-files": "lint-staged --allow-empty",
+    "fix:all-files": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --fix .",
+    "test": "yarn test:unit",
+    "test:unit": "jest --passWithNoTests no-test",
+    "ci-test:unit": "jest --runInBand --color $@ --passWithNoTests no-test",
+    "test:watch": "jest --watch --passWithNoTests no-test",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "?postinstall": "@todo: the prisma generate seems to be required, but is installed at the root",
+    "postinstall": "blitz prisma generate"
+  },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@hookform/resolvers": "2.8.0",
+    "@plasmicapp/host": "0.0.15",
+    "@plasmicapp/react-web": "0.2.68",
+    "@prisma/client": "2.29.1",
+    "@splitbee/web": "0.2.4",
+    "blitz": "0.39.0",
+    "cms-app": "workspace:*",
+    "framer-motion": "4.1.17",
+    "react": "alpha",
+    "react-dom": "alpha",
+    "react-hook-form": "7.13.0",
+    "react-merge-refs": "1.1.0",
+    "zod": "3.8.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "11.1.0",
+    "@types/preview-email": "2.0.1",
+    "@types/react": "17.0.19",
+    "eslint": "7.32.0",
+    "eslint-plugin-import": "2.24.1",
+    "jest": "27.0.6",
+    "lint-staged": "11.1.2",
+    "prettier": "2.3.2",
+    "prettier-plugin-prisma": "2.29.1",
+    "pretty-quick": "3.1.1",
+    "preview-email": "3.0.5",
+    "prisma": "2.29.1",
+    "typescript": "~4.3"
+  },
+  "private": true
+}
